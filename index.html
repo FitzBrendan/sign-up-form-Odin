@@ -1,0 +1,109 @@
+<!-- ==== Main Grid Container items
+form-section    grid area: form
+logo-section    grid area: logo-bg
+footer          grid area: footer
+==== -->
+
+<!-- ==== Form sub Grid Container items
+label/input pairs, cta div
+==== -->
+
+<!-- ==== Flex Containers
+form label/input divs
+cta div
+logo-section
+footer
+==== -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fitz-css-initialize-022823.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <title>Sign-up Form</title>
+  </head>
+
+  <body>
+    <main id="main-grid-container">
+
+      <section id="form-section">
+        <div class="headings">
+          <p>
+            This is not an active form!</br>Form example built to demonstrate</br>
+            functionality and responsiveness.
+          </p>
+          <p>Always test designs to maximize</br>customer experience.</p>
+          <p>Good Designs for Great Success.</p>
+        </div>
+
+        <form class="form-grid-container">
+
+          <div class="first-name">
+            <label for="first-name" >First Name</label>
+            <input type="text" id="first-name" name="first-name" placeholder="enter First Name" />
+          </div>
+          <div class="last-name">
+            <label for="last-name" class="required-input">Last Name</label>
+            <input type="text" id="last-name"   name="last-name"  placeholder="enter Last Name" required />
+          </div>
+          <div class="user-email">
+            <label for="user-email" class="required-input">Email</label>
+            <input type="email" id="user-email"  name="user-email" placeholder="enter Email" required />
+          </div>
+          <div class="phone">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number 123-123-1234" pattern="[0-9]{3}-?\s?[0-9]{3}-?\s?[0-9]{4}" title="123-123-1234">
+          </div>
+          <div class="password">
+            <label for="password" class="required-input">Password </label>
+            <input type="password" id="password"  name="password" placeholder="create Password" required/>
+          </div>
+          <div class="confirm-password">
+            <label for="confirm-password" class="required-input">Confirm Password</label>
+            <input type="password" id="confirm-password"  name="confirm-password" placeholder="re-enter Password" required />
+          </div>
+
+
+          <div class="cta">
+            <button type="submit">Create Account</button>
+            <div>
+              <p>Already have</br>an account?</br></br></p>
+              <label for="login-cb" class="login">Log In</label>
+              <input type="checkbox" id="login-cb" class="hidden">
+              <div class="popup"></div>
+            </div>
+          </div>
+        
+        </form>
+      </section>
+
+      <section id="logo-section">
+        <div class="fitz-logo">
+          <img class="logo-img" src="assets/Fitz-Logo.png" alt="Fitz-Logo" />
+        </div>
+        <div class="fitz">Fitz</div>
+      </section>
+
+      <footer>
+        <div class="photo-credit">Photo by Marvin Meyer on <a href="https://unsplash.com/@marvelous" target="_blank" rel="noopener noreferrer">Unsplash</a></div>
+        <div>
+          FitzBrendan <a href="https://github.com/FitzBrendan/sign-up-form-Odin" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+        <div>&copy 2023</div>
+      </footer>
+
+    </main>
+  </body>
+</html>

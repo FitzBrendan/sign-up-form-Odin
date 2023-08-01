@@ -1,0 +1,276 @@
+/* ==== Main Grid Container items
+form-section    grid area: form
+logo-section    grid area: logo-bg
+footer          grid area: footer
+==== */
+
+/* ==== Form sub Grid Container items
+label/input pairs, cta div
+==== */
+
+/* ==== Flex Containers
+form label/input divs
+cta div
+logo-section
+footer
+==== */
+
+/* ==== Font for Fitz Logo ==== */
+@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:ital,wght@1,300&family=Ysabeau+SC:wght@800&display=swap");
+
+:root {
+  --black: #000000;
+  --fitz-gold: #feff6d;
+  --fitz-green: #3a7d75;
+  --light-gold: #feff6d70;
+  --med-gold: #e0ca3b70;
+  --red: #ff0000;
+  --white: #ffffff;
+}
+
+html {
+  font-family: roboto, sans-serif;
+}
+
+/* ==== Mobile Layout ==== */
+
+#main-grid-container {
+  display: grid;
+  grid-template-areas:
+    "form"
+    "logo-bg"
+    "footer";
+  height: clamp(753px, 100vh, 915px);
+}
+
+/* ==== Form Section Layout ==== */
+
+#form-section {
+  grid-area: form;
+  background-color: var(--light-gold);
+}
+
+#form-section .headings {
+  padding: 1em 0.1em 1em 2em;
+}
+#form-section .headings p {
+  line-height: 1.2em;
+  padding-bottom: 0.5em;
+}
+
+#form-section form {
+  padding: 0 1em;
+}
+#form-section form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1em 0;
+}
+#form-section form > div > label {
+  background-color: var(--med-gold);
+  padding: 0.8em 0 0.1em 0.5em;
+}
+#form-section form > div > input {
+  border: solid var(--med-gold) 3px;
+  font-size: 1.2rem;
+  padding: 0.3em 0 0.1em 0.5em;
+}
+#form-section form label.required-input::after {
+  content: "\20\20(required)";
+  white-space: pre;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+#form-section input::placeholder {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+#form-section form button {
+  background-color: var(--fitz-green);
+  border-radius: 50%;
+  color: var(--fitz-gold);
+  font-size: 1.2rem;
+  padding: 0.5em 2em;
+}
+#form-section form button:hover {
+  border-radius: 1%;
+}
+
+#form-section .cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--fitz-green);
+  line-height: 1.2em;
+  padding: 0.2em 0.1em 0.2em 0.1em;
+  position: relative;
+}
+#form-section .cta label {
+  border: solid var(--fitz-green) 0.1em;
+  font-weight: 700;
+  padding: 0 0.5em 0.1em 0.5em;
+}
+
+.hidden {
+  display: none;
+}
+#form-section #login-cb:checked ~ .popup::before {
+  content: "This is a form template, a working live form would send user data to the server. A / B testing can determine the most productive colors, styles and layouts.";
+  display: block;
+  background-color: var(--white);
+  border: solid var(--black) 0.2em;
+  color: var(--black);
+  position: absolute;
+  top: -20em;
+  left: 2em;
+  margin: 0 2em;
+  padding: 3em 2em;
+  z-index: 11;
+}
+#form-section .login:hover {
+  cursor: pointer;
+}
+
+/* ==== end Form Section Layout ==== */
+/* ==== Logo Section Layout ==== */
+
+#logo-section {
+  grid-area: logo-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fitz-gold);
+  padding: 0.3em 0;
+}
+
+#logo-section .logo-img {
+  height: 4vh;
+  padding-top: 0.2em;
+}
+
+#logo-section .fitz {
+  color: var(--fitz-green);
+  font-size: 2rem;
+  font-family: ysabeau, sans-serif;
+  font-weight: 900;
+  font-variant: small-caps;
+}
+
+/* ==== end Logo Section Layout ==== */
+/* ==== Footer Layout ==== */
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  background-color: var(--fitz-gold);
+  color: var(--fitz-green);
+  font-size: 0.7rem;
+  font-style: italic;
+  padding: 0 0.1em 0.3em 0.1em;
+}
+footer div {
+  text-align: center;
+  width: 33.33vw;
+}
+footer a {
+  text-decoration: underline;
+}
+
+/* ==== end Footer Layout ==== */
+/* ==== Hide Background Photo on Mobile Layout ==== */
+
+@media (max-width: 767px) {
+  footer .photo-credit {
+    display: none;
+  }
+}
+
+/* ==== Tablets Computers Layout ==== */
+
+/* ==== Grid Areas for Form Label/Input divs ==== */
+
+#form-section form > div.first-name {
+  grid-area: first-name;
+}
+#form-section form > div.last-name {
+  grid-area: last-name;
+}
+#form-section form > div.user-email {
+  grid-area: user-email;
+}
+#form-section form > div.phone {
+  grid-area: phone;
+}
+#form-section form > div.password {
+  grid-area: password;
+}
+#form-section form > div.confirm-password {
+  grid-area: confirm-password;
+}
+#form-section form > div.cta {
+  grid-area: cta;
+}
+
+/* ==== Tablet Landscape / Computer breakpoint ==== */
+
+@media (min-width: 768px) {
+  #main-grid-container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "logo-bg form"
+      "footer footer";
+    height: 100vh;
+    width: clamp(768px, 85vw, 1000px);
+    margin: 0 auto;
+  }
+
+  #logo-section::before {
+    content: "";
+    background-image: url("assets/marvin-meyer-SYTO3xs06fU-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  #logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gold);
+    height: calc(100vh - 1.5em);
+    padding-bottom: 14vh;
+    position: relative;
+  }
+
+  #form-section .form-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "first-name last-name"
+      "user-email phone"
+      "password confirm-password"
+      "cta cta";
+    gap: 1em;
+  }
+  #form-section .headings {
+    padding: 4em 0.1em 1em 2em;
+  }
+  #form-section form > div.cta {
+    padding: 0 2em 0 1em;
+  }
+
+  footer {
+    align-items: center;
+    height: 2em;
+    padding: 0;
+  }
+}
+
+/* ==== end Tablets Computers Layout ==== */
